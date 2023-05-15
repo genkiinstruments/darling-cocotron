@@ -18,6 +18,7 @@
 // Running apps: _LSCopyRunningApplicationArray() - ditto.
 
 @interface NSRunningApplication : NSObject
+@property(class, readonly, strong) __kindof NSRunningApplication *currentApplication;
 @end
 
 @implementation NSRunningApplication
@@ -29,4 +30,10 @@
     NSLog(@"Stub called: %@ in %@",
           NSStringFromSelector([anInvocation selector]), self);
 }
+
++ (NSRunningApplication*) currentApplication {
+    printf("STUB called: %s\n", __PRETTY_FUNCTION__);
+    return nil;
+}
+
 @end
